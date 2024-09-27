@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import Button from '@/app/components/button';
-import CompanyFormModal from "@/app/components/company-form-modal";
-// import dynamic from 'next/dynamic';
-//
-// const CompanyFormModal = dynamic(() => import('./company-form-modal'), {
-//   ssr: false,
-// });
+// import CompanyFormModal from "@/app/components/company-form-modal"; // turn off імпорт компонента
+import dynamic from 'next/dynamic';
+
+// usage import dynamic компонента для оптимізації початкового завантаження сторінки
+const CompanyFormModal = dynamic(() => import('./company-form-modal'), {
+  ssr: false,
+});
 
 export default function AddCompanyButton() {
   const [show, setShow] = useState(false);
