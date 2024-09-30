@@ -5,6 +5,8 @@ import { Form, Formik } from 'formik';
 import Button from '@/app/components/button';
 import InputField from '@/app/components/input-field';
 import LogoUploader from '@/app/components/logo-uploader';
+// Імпорт кастомного елемента безпосередньо, без імпорту як React-компонент
+import  '@/app/components/custom-date-picker-shadow-dom';
 
 // тип значень форми
 export type CompanyFieldValues = {
@@ -47,7 +49,15 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
               placeholder="Category"
               name="category"
             />
-            <InputField label="Joined date" type="date" name="date" />
+            {/*var.1 календар не визначений явно у компоненті, він є частиною стандартної поведінки HTML для полів введення з типом date*/}
+            <InputField label="Joined date" type="date" name="date"  />
+
+            {/* var.2 інтегруємо в React-код кастомний компонент календаря */}
+            {/*<div className="flex flex-col" >*/}
+            {/*  <label className="mb-2"  htmlFor="date">Joined date</label>*/}
+            {/*  <custom-date-picker />*/}
+            {/*</div>*/}
+
             <InputField
               label="Description"
               placeholder="Description"
