@@ -14,8 +14,10 @@ export interface PageProps {
 export default function Page({params}: PageProps) {
   return (
     <>
-      <Header>Companies({String(params.id)})</Header>
-        <p>{new Date().toTimeString()}</p>
+      <Header>Companies № {String(params.id)}</Header>
+        <p>This text about Company&nbsp;№ {String(params.id)}
+            {/*{new Date().toTimeString()}*/}
+        </p>
     </>
   );
 }

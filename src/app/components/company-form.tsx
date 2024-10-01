@@ -65,7 +65,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             />
           </div>
         </div>
-        <Button type="submit">Add company</Button>
+        <Button type="submit" >Add company</Button>
       </Form>
     </Formik>
   );
