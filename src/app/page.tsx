@@ -8,11 +8,10 @@ export default function Home() {
     <main>
       <h1 className="text-xl text-center mb-4">Home page</h1>
       <AddCompanyButton />
-      <ServerComponent />
-        {/* рутований ClientComponent, що передає ServerComponentCopy як children */}
-      <ClientComponent>
-        <ServerComponentCopy />
-      </ClientComponent>
+      {/*<ServerComponent />*/}
+      {/*<ClientComponent> /!* рутований ClientComponent, що передає ServerComponentCopy як children *!/*/}
+      {/*  <ServerComponentCopy />*/}
+      {/*</ClientComponent>*/}
     </main>
   );
 }

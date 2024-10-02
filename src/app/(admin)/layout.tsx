@@ -6,6 +6,7 @@ export interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
+    // console.log("rendering") // for show quantity rendering while use tag <a> vs <Link> in component <SidebarItem /> from <Sidebar />
   return (
     <>
       <Sidebar />
