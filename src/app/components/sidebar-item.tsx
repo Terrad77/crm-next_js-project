@@ -20,7 +20,8 @@ export default function SidebarItem({
 }: SidebarItemProps) {
   return (
     <li>
-      {/* заміна тег <a> на тег <link> дає змогу Next використовувати частковий рендеринг */}
+      {/* заміна тег <a> на тег <link> дає змогу Next використовувати частковий рендеринг.
+      компонент <link> зазвичай використовується в Next.js, для навігації в клієнтському компоненті */}
       <Link
         href={pathname}
         className={clsx(
