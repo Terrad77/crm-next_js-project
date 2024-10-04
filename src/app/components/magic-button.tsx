@@ -14,7 +14,7 @@ export default function MagicButton(props: ButtonProps) {
 
   return (
     <Button {...props} onClick={() => setCount(count + 1)}>
-      Click me more than 2 times
+      Click 3times for error
     </Button>
   );
 }
