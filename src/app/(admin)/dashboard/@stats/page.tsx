@@ -13,7 +13,12 @@ const labelByStat = {
 };
 
 export default async function Page({}: PageProps) {
-  const data = await getSummaryStats();
+  const data = await getSummaryStats({
+    // встановлення для next часу кешування ресурсу
+    next: {
+      revalidate: 5, //revalidate - Значение в сек. определяет, как часто данные извлекаются повторно. Если нужно сделать кеш недействительным вручную, revalidate: 0
+    },
+  });
 
   return (
     <div className="grid grid-cols-12 gap-5">
