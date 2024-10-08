@@ -26,8 +26,10 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ TanStack Query ](https://tanstack.com/query/latest/docs/framework/react/installation) - library для выполнения запросов данных и управления состоянием приложения на основе GraphQL:
+  - npm i @tanstack/react-query
+  - npm i @tanstack/react-query-devtools
+- You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js)your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
