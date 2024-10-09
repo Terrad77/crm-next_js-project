@@ -6,7 +6,9 @@ import { CompanyStatus } from '@/lib/api';
 export interface StatusLabelProps {
   status: CompanyStatus;
   disabled?: boolean; // add state props
+  styled?: boolean; // add style props
 }
+
 const labelByStatus = {
   [CompanyStatus.Active]: 'Active',
   [CompanyStatus.NotActive]: 'Not Active',
@@ -14,8 +16,15 @@ const labelByStatus = {
   [CompanyStatus.Suspended]: 'Suspended',
 };
 
-export default function StatusLabel({ status, disabled }: StatusLabelProps) {
-  console.log('SECRET_KEY', process.env.CRM_SECRET_KEY);
+export default function StatusLabel({
+  status,
+  disabled,
+  styled = true,
+}: StatusLabelProps) {
+  const label = labelByStatus[status];
+  if (!styled) return <>{label}</>;
+
+  // console.log('SECRET_KEY', process.env.CRM_SECRET_KEY);
   return (
     <div
       // conditional styles -умовні стилі, застосовано взалежності від status
@@ -31,7 +40,7 @@ export default function StatusLabel({ status, disabled }: StatusLabelProps) {
       )}
     >
       <div className="w-1 h-1 mr-2 rounded-full bg-current" />
-      {labelByStatus[status]}
+      {label}
     </div>
   );
 }

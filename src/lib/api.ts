@@ -53,7 +53,7 @@ export interface Promotion {
   companyTitle: string;
   avatar?: string;
 }
-// token for connect to backend
+// token for connecting to backend
 const PROJECT_TOKEN = process.env.NEXT_PUBLIC_PROJECT_TOKEN;
 
 //--------------------------------   utils functions ----------------------------//
@@ -109,4 +109,35 @@ export const getPromotions = async (
     `${buildUrl('promotions')}?${stringifyQueryParams(params)}`,
     init,
   );
+};
+
+// ф-ції запиту до API
+
+export const createCompany = async (
+  data: Omit<Company, 'id' | 'hasPromotions'>,
+  init?: RequestInit,
+) => {
+  return sendRequest<Company>(buildUrl('companies'), {
+    ...init,
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      ...(init && init.headers),
+      'content-type': 'application/json',
+    },
+  });
+};
+
+export const createPromotion = async (
+  data: Omit<Promotion, 'id'>,
+  init?: RequestInit,
+) => {
+  return sendRequest<Promotion>(buildUrl('promotions'), {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      ...(init && init.headers),
+      'content-type': 'application/json',
+    },
+  });
 };

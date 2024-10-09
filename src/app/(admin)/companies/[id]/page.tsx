@@ -34,6 +34,7 @@ export default async function Page({ params }: PageProps) {
   if (!company) {
     notFound(); // виклик ф-ції обробки у разі неможливості завантажити company
   }
+
   const dehydratedState = dehydrate(queryClient);
 
   // якщо компанія існує рендеряться клієнтьски компоненти за id із параметрів

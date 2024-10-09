@@ -1,7 +1,7 @@
 import React from 'react';
 import { Plus_Jakarta_Sans } from 'next/font/google'; // імпорт шрифту
 import Providers from '@/app/components/providers';
-import './globals.css'; // імпортуємо глобальни стилі
+import './globals.css'; // імпорт глобальних стилів
 
 // инициализация шрифта с использованием латинского подмножества, для отрисовки латинских символов.
 const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
