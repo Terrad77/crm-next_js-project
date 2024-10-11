@@ -7,7 +7,14 @@ import CompanyRow from '@/app/components/company-row';
 
 export interface CompanyTableProps {}
 
-const headers = ['Category', 'Joined date'];
+const headers = [
+  'Category',
+  'Company',
+  'Status',
+  'Promotion',
+  'Country',
+  'Joined date',
+];
 
 export default function CompanyTable({}: CompanyTableProps) {
   const { data } = useQuery({

@@ -37,7 +37,7 @@ const initialValues: CompanyFieldValues = {
 };
 
 export interface CompanyFormProps {
-  onSubmit: (values: CompanyFieldValues) => void | Promise<void>;
+  onSubmit?: (values: CompanyFieldValues) => void | Promise<void>;
 }
 
 export default function CompanyForm({ onSubmit }: CompanyFormProps) {
@@ -57,8 +57,9 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: createCompany,
-    onSuccess: () => {
-      queryClient.invalidateQueries({
+    onSuccess: async () => {
+      // Ожидание завершения инвалидации запросов
+      await queryClient.invalidateQueries({
         queryKey: ['companies'],
       });
     },
