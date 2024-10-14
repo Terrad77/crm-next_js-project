@@ -120,14 +120,14 @@ export const createCompany = async (
   data: Omit<Company, 'id' | 'hasPromotions'>, // Omit - встроенный тип утилиты в TypeScript, теперь NewCompany - первый аргумент (тип который подлежит изменению) будет иметь те же свойства, что и Company за исключением id и hasPromotions -объединение имен свойств, которые будут исключены из исходного типа.
   init?: RequestInit, // параметр init ('?'-помечен как необязательный) имеет тип RequestInit - интерфейс браузера с набором опций для настройки HTTP-запроса
 ) => {
-  const company = {
-    ...data,
-    _id: uuidv4(), // Генерация нового идентификатора
-  };
+  // const company = {
+  //   ...data,
+  //   _id: uuidv4(), // Генерация нового идентификатора
+  // };
   return sendRequest<Company>(buildUrl('companies'), {
     ...init,
     method: 'POST',
-    body: JSON.stringify(company),
+    body: JSON.stringify(data),
     headers: {
       ...(init && init.headers),
       'content-type': 'application/json',
