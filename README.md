@@ -6,6 +6,7 @@ First, run the development server:
 
 ```bash
 npm run dev
+
 # or
 yarn dev
 # or
@@ -38,4 +39,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 This app is a full-fledged CRM-like web application aimed at optimizing the management  of supplier information
-You can see the main app interface by path: https://crm-next-js-project.vercel.app/dashboard
+You can see the main app interface by path: https://crm-next-js-project-4d1xf3hve-terrad77s-projects.vercel.app/dashboard
