@@ -11,3 +11,19 @@
 body {
   background: #fafafa;
 }
+
+/*CSS для анимации бегущей строки в кнопке*/
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Начинает за правым краем */
+  }
+  100% {
+    transform: translateX(-100%); /* Заканчивается за левым краем */
+  }
+}
+
+.animate-marquee {
+  animation: marquee 03s linear infinite;
+  white-space: nowrap; /* Запретить перенос строк */
+  display: inline-block; /* Позволить span занимать место */
+}

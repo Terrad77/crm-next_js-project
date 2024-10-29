@@ -9,7 +9,7 @@ export interface ButtonProps
   disabled?: boolean;
 }
 
-export default function Button({ disabled, ...rest }: ButtonProps) {
+export default function Button({ disabled, className, ...rest }: ButtonProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -21,9 +21,10 @@ export default function Button({ disabled, ...rest }: ButtonProps) {
       {...rest}
       onClick={handleClick}
       className={clsx(
-        'py-2.5 px-5 bg-gray-900 text-zinc-50 text-base text-center font-medium rounded',
-        !disabled && 'hover:bg-gray-800 active:bg-gray-950',
-        disabled && 'text-zinc-100',
+        'py-2.5 px-5 bg-gray-900 text-zinc-50 text-base text-center font-medium rounded', // Базовые стили
+        !disabled && 'hover:bg-gray-800 active:bg-gray-950', // Стили для активного состояния
+        disabled && 'text-zinc-100', // Стили для активного состояния
+        className, // Добавляем переданный className, чтобы он применялся
       )}
     />
   );
